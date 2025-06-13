@@ -1,0 +1,13 @@
+[package]
+name = "spin-grpc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1"
+hyperium = { package = "http", version = "1.0.0" }
+spin-executor =  { git = "https://github.com/fibonacci1729/spin-rust-sdk", branch = "use-wasi-io" }
+tonic = { version = "0.13.1", features = ["prost", "router"], default-features = false}
+tower-service = { version = "0.3.2" }
+wasi-hyperium = { git = "https://github.com/fibonacci1729/wasi-hyperium", branch = "wasi-0.2.0" }
+wasi = "0.13.1"

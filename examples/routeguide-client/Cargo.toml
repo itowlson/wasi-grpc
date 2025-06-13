@@ -1,0 +1,19 @@
+[package]
+name = "routeguide-client"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+anyhow = "1"
+futures = "0.3.28"
+http = "1.0.0"
+prost = "0.13.5"
+spin-grpc = { path = "../.." }
+spin-sdk = { git = "https://github.com/fibonacci1729/spin-rust-sdk", branch = "use-wasi-io" }
+tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
+
+[build-dependencies]
+tonic-build = { version = "0.13.1", features = ["prost"] }
