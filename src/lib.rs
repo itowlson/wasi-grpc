@@ -57,7 +57,13 @@ impl PollableRegistry for SpinExecutorPoller {
         spin_executor::push_waker_and_get_token(pollable, cx.waker().clone())
     }
 
+    // This should never be called when using `spin_executor::run`
     fn poll(&self) -> bool {
-        todo!("TODO")
+        panic!("not supported for spin-grpc")
+    }
+
+    // This should never be called when using `spin_executor::run`
+    fn block_on<T>(&self, _fut: impl std::future::Future<Output = T>) -> Result<T, wasi_hyperium::poll::Stalled> {
+        panic!("not supported for spin-grpc")
     }
 }

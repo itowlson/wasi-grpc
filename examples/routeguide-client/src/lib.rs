@@ -25,8 +25,6 @@ async fn make_call(_req: IncomingRequest, res: ResponseOutparam) -> anyhow::Resu
         longitude: -746_188_906,
     })).await?;
 
-    println!("Response: {:#?}", response);
-
     let outgoing = OutgoingResponse::new(Headers::new());
     let mut body = outgoing.take_body();
     res.set(outgoing);

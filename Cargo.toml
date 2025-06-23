@@ -6,8 +6,8 @@ edition = "2024"
 [dependencies]
 anyhow = "1"
 hyperium = { package = "http", version = "1.0.0" }
-spin-executor =  { git = "https://github.com/fibonacci1729/spin-rust-sdk", branch = "use-wasi-io" }
+spin-executor =  "4.0.0"
 tonic = { version = "0.13.1", features = ["prost", "router"], default-features = false}
 tower-service = { version = "0.3.2" }
-wasi-hyperium = { git = "https://github.com/fibonacci1729/wasi-hyperium", branch = "wasi-0.2.0" }
-wasi = "0.13.1"
+wasi-hyperium = { git = "https://github.com/fermyon/wasi-hyperium", rev = "517fa6fe90b4d09dc05a8fd85b9ad104acee54d6" }
+wasi = "=0.13.1"

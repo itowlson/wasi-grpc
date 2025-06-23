@@ -872,11 +872,11 @@ dependencies = [
 [[package]]
 name = "spin-executor"
 version = "3.1.1"
-source = "git+https://github.com/fibonacci1729/spin-rust-sdk?branch=use-wasi-io#80d71f3ae8a0318ede4801cff09002c6d74a3de4"
+source = "git+https://github.com/spinframework/spin-rust-sdk?rev=5f7bd1dda11a9835e8195d1d394f71c2b9d693ba#5f7bd1dda11a9835e8195d1d394f71c2b9d693ba"
 dependencies = [
  "futures",
  "once_cell",
- "wasi 0.13.3+wasi-0.2.2",
+ "wasi 0.13.1+wasi-0.2.0",
 ]
 
 [[package]]
@@ -888,14 +888,14 @@ dependencies = [
  "spin-executor",
  "tonic",
  "tower-service",
- "wasi 0.13.3+wasi-0.2.2",
+ "wasi 0.13.1+wasi-0.2.0",
  "wasi-hyperium",
 ]
 
 [[package]]
 name = "spin-macro"
 version = "3.1.1"
-source = "git+https://github.com/fibonacci1729/spin-rust-sdk?branch=use-wasi-io#80d71f3ae8a0318ede4801cff09002c6d74a3de4"
+source = "git+https://github.com/spinframework/spin-rust-sdk?rev=5f7bd1dda11a9835e8195d1d394f71c2b9d693ba#5f7bd1dda11a9835e8195d1d394f71c2b9d693ba"
 dependencies = [
  "anyhow",
  "bytes",
@@ -907,7 +907,7 @@ dependencies = [
 [[package]]
 name = "spin-sdk"
 version = "3.1.1"
-source = "git+https://github.com/fibonacci1729/spin-rust-sdk?branch=use-wasi-io#80d71f3ae8a0318ede4801cff09002c6d74a3de4"
+source = "git+https://github.com/spinframework/spin-rust-sdk?rev=5f7bd1dda11a9835e8195d1d394f71c2b9d693ba#5f7bd1dda11a9835e8195d1d394f71c2b9d693ba"
 dependencies = [
  "anyhow",
  "async-trait",
@@ -923,7 +923,7 @@ dependencies = [
  "spin-executor",
  "spin-macro",
  "thiserror 1.0.69",
- "wasi 0.13.3+wasi-0.2.2",
+ "wasi 0.13.1+wasi-0.2.0",
  "wit-bindgen",
 ]
 
@@ -1155,11 +1155,11 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 
 [[package]]
 name = "wasi"
-version = "0.13.3+wasi-0.2.2"
+version = "0.13.1+wasi-0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "26816d2e1a4a36a2940b96c5296ce403917633dff8f3440e9b236ed6f6bacad2"
+checksum = "2f43d1c36145feb89a3e61aa0ba3e582d976a8ab77f1474aa0adb80800fe0cf8"
 dependencies = [
- "wit-bindgen-rt 0.33.0",
+ "wit-bindgen-rt 0.24.0",
 ]
 
 [[package]]
@@ -1174,7 +1174,7 @@ dependencies = [
 [[package]]
 name = "wasi-hyperium"
 version = "0.2.0"
-source = "git+https://github.com/fibonacci1729/wasi-hyperium?branch=wasi-0.2.0#368145ed18de914a85058c5d2f68171ca7c2da23"
+source = "git+https://github.com/fermyon/wasi-hyperium?rev=517fa6fe90b4d09dc05a8fd85b9ad104acee54d6#517fa6fe90b4d09dc05a8fd85b9ad104acee54d6"
 dependencies = [
  "anyhow",
  "bytes",
@@ -1185,7 +1185,7 @@ dependencies = [
  "http-body 1.0.1",
  "thiserror 2.0.12",
  "tower-service",
- "wasi 0.13.3+wasi-0.2.2",
+ "wasi 0.13.1+wasi-0.2.0",
 ]
 
 [[package]]
@@ -1456,9 +1456,9 @@ dependencies = [
 
 [[package]]
 name = "wit-bindgen-rt"
-version = "0.33.0"
+version = "0.24.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3268f3d866458b787f390cf61f4bbb563b922d091359f9608842999eaee3943c"
+checksum = "3b0780cf7046630ed70f689a098cd8d56c5c3b22f2a7379bbdb088879963ff96"
 dependencies = [
  "bitflags",
 ]

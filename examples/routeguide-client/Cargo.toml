@@ -12,7 +12,7 @@ futures = "0.3.28"
 http = "1.0.0"
 prost = "0.13.5"
 spin-grpc = { path = "../.." }
-spin-sdk = { git = "https://github.com/fibonacci1729/spin-rust-sdk", branch = "use-wasi-io" }
+spin-sdk =  "4.0.0"
 tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
 
 [build-dependencies]
