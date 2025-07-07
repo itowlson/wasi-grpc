@@ -1,4 +1,10 @@
-Start the routeguide-server from the tonic repository:
+# Spin gRPC RouteGuide Example
+
+This example is adapted from [`routeguide`](TODO) example in the [`tonic`](TODO) repository to run in a Spin application.
+
+The current example includes an example for making a unary and uni-direction streaming gRPC requests.
+
+To test, start the routeguide-server from the tonic repository:
 
 ```console
 $ cargo run --bin routeguide-server
@@ -13,5 +19,5 @@ $ spin up --build
 
 In another terminal, send a request:
 ```console
-$ curl localhost:3000
+$ curl localhost:3000/get_feature
 Feature: Feature { name: "Berkshire Valley Management Area Trail, Jefferson, NJ, USA", location: Some(Point { latitude: 409146138, longitude: -746188906 }) }

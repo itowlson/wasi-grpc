@@ -1,18 +1,12 @@
 use hyperium::{Uri, uri::Parts};
-use spin_executor::{
-    CancelToken,
-};
+use spin_executor::CancelToken;
 use std::future::Future;
 use std::pin::Pin;
 use std::task::{Context, Poll};
-use tower_service::Service;
 use tonic::body::Body;
-use wasi_hyperium::{
-    hyperium1::send_outbound_request,
-    IncomingHttpBody,
-    poll::PollableRegistry,
-};
+use tower_service::Service;
 use wasi::io::poll::Pollable;
+use wasi_hyperium::{IncomingHttpBody, hyperium1::send_outbound_request, poll::PollableRegistry};
 
 pub struct WasiGrpcEndpoint {
     endpoint: Uri,
@@ -35,14 +29,16 @@ impl Service<hyperium::Request<Body>> for WasiGrpcEndpoint {
     }
 
     fn call(&mut self, mut req: hyperium::Request<Body>) -> Self::Future {
-        let Parts { scheme, authority, .. } = self.endpoint.clone().into_parts();
+        let Parts {
+            scheme, authority, ..
+        } = self.endpoint.clone().into_parts();
 
         let mut parts = std::mem::take(req.uri_mut()).into_parts();
         parts.authority = authority;
         parts.scheme = scheme;
 
         *req.uri_mut() = parts.try_into().unwrap();
-       
+
         Box::pin(send_outbound_request(req, SpinExecutorPoller))
     }
 }
@@ -63,7 +59,10 @@ impl PollableRegistry for SpinExecutorPoller {
     }
 
     // This should never be called when using `spin_executor::run`
-    fn block_on<T>(&self, _fut: impl std::future::Future<Output = T>) -> Result<T, wasi_hyperium::poll::Stalled> {
+    fn block_on<T>(
+        &self,
+        _fut: impl std::future::Future<Output = T>,
+    ) -> Result<T, wasi_hyperium::poll::Stalled> {
         panic!("not supported for spin-grpc")
     }
 }

@@ -48,6 +48,28 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e16d2d3311acee920a9eb8d33b8cbc1787ce4a264e85f964c2404b969bdcd487"
 
 [[package]]
+name = "async-stream"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b5a71a6f37880a80d1d7f19efd781e4b5de42c88f0722cc13bcb6cc2cfe8476"
+dependencies = [
+ "async-stream-impl",
+ "futures-core",
+ "pin-project-lite",
+]
+
+[[package]]
+name = "async-stream-impl"
+version = "0.3.6"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c7c24de15d275a1ecfd47a380fb4d5ec9bfe0933f309ed5e705b775596a3574d"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.103",
+]
+
+[[package]]
 name = "async-trait"
 version = "0.1.88"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -741,11 +763,13 @@ name = "routeguide-client"
 version = "0.1.0"
 dependencies = [
  "anyhow",
+ "async-stream",
  "futures",
  "http 1.3.1",
  "prost",
  "spin-grpc",
  "spin-sdk",
+ "tokio",
  "tonic",
  "tonic-build",
 ]
@@ -871,8 +895,9 @@ dependencies = [
 
 [[package]]
 name = "spin-executor"
-version = "3.1.1"
-source = "git+https://github.com/spinframework/spin-rust-sdk?rev=5f7bd1dda11a9835e8195d1d394f71c2b9d693ba#5f7bd1dda11a9835e8195d1d394f71c2b9d693ba"
+version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f3fd5c317f89c040f882f3260e8ef933ca0c9a7b1b169ea5793dae3e552e8873"
 dependencies = [
  "futures",
  "once_cell",
@@ -894,8 +919,9 @@ dependencies = [
 
 [[package]]
 name = "spin-macro"
-version = "3.1.1"
-source = "git+https://github.com/spinframework/spin-rust-sdk?rev=5f7bd1dda11a9835e8195d1d394f71c2b9d693ba#5f7bd1dda11a9835e8195d1d394f71c2b9d693ba"
+version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "07524b07786d812f7360ff81dc7e0a055d946aa87afea9cdbd19142b795bd440"
 dependencies = [
  "anyhow",
  "bytes",
@@ -906,8 +932,9 @@ dependencies = [
 
 [[package]]
 name = "spin-sdk"
-version = "3.1.1"
-source = "git+https://github.com/spinframework/spin-rust-sdk?rev=5f7bd1dda11a9835e8195d1d394f71c2b9d693ba#5f7bd1dda11a9835e8195d1d394f71c2b9d693ba"
+version = "4.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "48ce1128f028feca1cbbedb19f867328e172765dc94750a6b094ddc5e09acb3c"
 dependencies = [
  "anyhow",
  "async-trait",
