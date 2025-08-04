@@ -1,8 +1,8 @@
-# Cutting a new release of spin-grpc
+# Cutting a new release of wasi-grpc
 
 To cut a new release, you will need to do the following:
 
-1. Confirm that [CI is green](https://github.com/fermyon/spin-grpc/actions) for the commit selected to be tagged and released.
+1. Confirm that [CI is green](https://github.com/fermyon/wasi-grpc/actions) for the commit selected to be tagged and released.
 
 2. Change the workspace version number in [Cargo.toml](./Cargo.toml).
 
@@ -16,10 +16,10 @@ To cut a new release, you will need to do the following:
 
     ```
     # Create a GPG-signed and annotated tag
-    git tag -s -m "spin-grpc v0.1.0" v0.1.0
+    git tag -s -m "wasi-grpc v0.1.0" v0.1.0
 
-    # Push the tag to the remote corresponding to fermyon/spin-grpc (here 'origin')
+    # Push the tag to the remote corresponding to fermyon/wasi-grpc (here 'origin')
     git push origin v0.1.0
     ```
 
-6. Pushing the tag upstream will trigger the [release action](https://github.com/fermyon/spin-grpc/actions/workflows/release.yml) which publishes the crates in this workspace to `crates.io`.
+6. Pushing the tag upstream will trigger the [release action](https://github.com/fermyon/wasi-grpc/actions/workflows/release.yml) which publishes the crates in this workspace to `crates.io`.

@@ -1,5 +1,5 @@
 use futures::SinkExt;
-use spin_grpc::WasiGrpcEndpoint;
+use wasi_grpc::WasiGrpcEndpoint;
 use spin_sdk::http::{Headers, IncomingRequest, OutgoingResponse, ResponseOutparam, OutgoingBody};
 use spin_sdk::http_component;
 use tonic::Request;
