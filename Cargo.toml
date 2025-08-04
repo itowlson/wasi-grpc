@@ -2,6 +2,8 @@
 name = "spin-grpc"
 version = "0.1.0"
 edition = "2024"
+license = "Apache-2.0 WITH LLVM-exception"
+description = "gRPC clients on Spin / WASI Hyperium"
 
 [dependencies]
 anyhow = "1"
