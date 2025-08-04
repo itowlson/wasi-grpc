@@ -10,7 +10,7 @@ crate-type = ["cdylib"]
 anyhow = "1"
 futures = "0.3.28"
 prost = "0.13.5"
-spin-grpc = { path = "../.." }
+wasi-grpc = { path = "../.." }
 spin-sdk =  "4.0.0"
 tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
 

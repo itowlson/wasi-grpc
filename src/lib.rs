@@ -55,7 +55,7 @@ impl PollableRegistry for SpinExecutorPoller {
 
     // This should never be called when using `spin_executor::run`
     fn poll(&self) -> bool {
-        panic!("not supported for spin-grpc")
+        panic!("not supported for wasi-grpc")
     }
 
     // This should never be called when using `spin_executor::run`
@@ -63,6 +63,6 @@ impl PollableRegistry for SpinExecutorPoller {
         &self,
         _fut: impl std::future::Future<Output = T>,
     ) -> Result<T, wasi_hyperium::poll::Stalled> {
-        panic!("not supported for spin-grpc")
+        panic!("not supported for wasi-grpc")
     }
 }

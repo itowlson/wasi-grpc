@@ -1,4 +1,4 @@
-# Spin gRPC RouteGuide Example
+# Spin wasi-grpc RouteGuide Example
 
 This example is adapted from [`routeguide`](TODO) example in the [`tonic`](TODO) repository to run in a Spin application.
 

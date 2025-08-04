@@ -1,4 +1,4 @@
-# spin-grpc
+# wasi-grpc
 
 Enables **gRPC clients** to work inside **Spin** components using [`wasi-hyperium`](https://github.com/fermyon/wasi-hyperium) and the [`spin-rust-sdk`](https://github.com/fermyon/spin-rust-sdk).
 
@@ -21,7 +21,7 @@ Spin is a fast, secure WebAssembly framework for serverless apps. This project e
 anyhow = "1"
 futures = "0.3.28"
 prost = "0.13.5"
-spin-grpc = "0.1.0"
+wasi-grpc = "0.1.0"
 spin-sdk =  "4.0.0"
 tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
 ```
