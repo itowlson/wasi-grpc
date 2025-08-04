@@ -26,7 +26,7 @@ spin-sdk =  "4.0.0"
 tonic = { version = "0.13.1", features = ["codegen", "prost", "router"], default-features = false}
 ```
 
-### 2. Generate gRPC client clode with `tonic-build`
+### 2. Generate gRPC client code with `tonic-build`
 
 In `build.rs`:
 
