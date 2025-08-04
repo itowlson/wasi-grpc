@@ -4,8 +4,6 @@ Enables **gRPC clients** to work inside **Spin** components using [`wasi-hyperiu
 
 Spin is a fast, secure WebAssembly framework for serverless apps. This project extends Spin's capabilities by enabling components to make outbound gRPC requests, bridging the gap between Wasm sandboxing and modern microservice communication.
 
----
-
 ## 🚀 Features
 
 - 🧩 **gRPC over HTTP/2** support inside Spin apps
@@ -13,15 +11,6 @@ Spin is a fast, secure WebAssembly framework for serverless apps. This project e
 - 🦀 Built with `wasi-hyperium` and `tonic`
 - 🌍 Works with most standard gRPC services
 - 🧪 Great for calling internal microservices or public gRPC APIs from Spin
-
----
-
-## 📦 Dependencies
-
-- [tonic](https://github.com/hyperium/tonic) (gRPC client)
-- [wasi-hyperium](https://github.com/fermyon/wasi-hyperium) (Hyperium for WASI Preview2 HTTP)
-
----
 
 ## 🛠️ Usage
 
@@ -69,8 +58,6 @@ let response = client.get_feature(Request::new(Point {
     longitude: -746_188_906,
 })).await?;
 ```
-
----
 
 ## 🔒 Spin Notes
 
