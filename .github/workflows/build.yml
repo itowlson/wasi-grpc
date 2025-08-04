@@ -1,0 +1,48 @@
+name: Rust
+on:
+  push:
+    branches: ["main", "v*"]
+    tags: ["v*"]
+  pull_request:
+    branches: ["main", "v*"]
+    paths-ignore:
+      - "README.md"
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_VERSION: 1.86
+
+jobs:
+  lint-and-test:
+    name: Lint and Test
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: "${{ runner.os }}-full-${{ hashFiles('./Cargo.lock') }}"
+
+      - name: Install Rust toolchain
+        shell: bash
+        run: |
+          rustup toolchain install ${{ env.RUST_VERSION }} --component clippy --component rustfmt
+          rustup default ${{ env.RUST_VERSION }}
+          rustup target add wasm32-wasip1
+
+      - name: Lint
+        shell: bash
+        run: |
+          cargo fmt --all -- --check
+          cargo clippy --workspace --all-targets -- -D warnings
+        
+      - name: Test
+        shell: bash
+        run: cargo test --workspace
+        
+      - name: Validate docs examples
+        shell: bash
+        run: cargo test --doc
+
+      - name: Build
+        run: cargo build --verbose
