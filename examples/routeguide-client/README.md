@@ -1,8 +1,8 @@
 # Spin wasi-grpc RouteGuide Example
 
-This example is adapted from [`routeguide`](TODO) example in the [`tonic`](TODO) repository to run in a Spin application.
+This example is adapted from the [`routeguide`](https://github.com/hyperium/tonic/blob/v0.13.1/examples/src/routeguide/client.rs) client in the [`tonic`](https://github.com/hyperium/tonic/tree/v0.13.1) repository to run in a Spin application.
 
-The current example includes an example for making a unary and uni-direction streaming gRPC requests.
+This example demonstates making unary and uni-direction streaming gRPC requests.
 
 To test, start the routeguide-server from the tonic repository:
 
