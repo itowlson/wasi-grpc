@@ -1,18 +1,18 @@
 spin_manifest_version = 2
 
 [application]
-name = "routeguide-client"
+name = "helloworld-client"
 version = "0.1.0"
 authors = ["Brian Hardock <brian.hardock@fermyon.com>"]
 description = "An example of using a gRPC client in Spin"
 
 [[trigger.http]]
 route = "/..."
-component = "routeguide-client"
+component = "helloworld-client"
 
-[component.routeguide-client]
-source = "target/wasm32-wasip1/release/routeguide_client.wasm"
+[component.helloworld-client]
+source = "target/wasm32-wasip1/release/helloworld_client.wasm"
 allowed_outbound_hosts = ["*://*:*"]
-[component.routeguide-client.build]
+[component.helloworld-client.build]
 command = "cargo build --target wasm32-wasip1 --release"
 watch = ["src/**/*.rs", "Cargo.toml"]
